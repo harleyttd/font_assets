@@ -65,7 +65,7 @@ module FontAssets
       @mime_types.font? extension(path)
     end
 
-    def set_headers!(headers, body, path)
+    def set_headers!(headers, body, path = '')
       if ext = extension(path) and font_asset?(ext)
         headers.merge!(access_control_headers)
         headers.merge!('Content-Type' => mime_type(ext)) if headers['Content-Type']
